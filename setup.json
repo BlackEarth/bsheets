@@ -1,0 +1,26 @@
+{
+  "name": "bsheets",
+  "version": "0.1.1",
+  "description": "Library for working with spreadsheets",
+  "url": "https://github.com/BlackEarth/bsheets",
+  "author": "Sean Harrison",
+  "author_email": "sah@bookgenesis.com",
+  "license": "MPL 2.0",
+  "classifiers": [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Programming Language :: Python :: 3"
+  ],
+  "entry_points": {},
+  "install_requires": ["openpyxl", "cchardet"],
+  "extras_require": {
+    "dev": ["twine"],
+    "test": []
+  },
+  "package_data": {
+    "": []
+  },
+  "data_files": [],
+  "scripts": []
+}
