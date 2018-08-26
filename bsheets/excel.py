@@ -3,7 +3,7 @@ import openpyxl, re, csv, cchardet, io
 from collections import OrderedDict
 
 
-def load_workbook_data(filepath, headers=True, break_on_blank=True):
+def load_workbook_data(filepath, headers=True, break_on_blank=False):
     """get workbook data from the given file. 
     Arguments:
 
@@ -43,9 +43,10 @@ def load_workbook_data(filepath, headers=True, break_on_blank=True):
         keys = [re.sub(r"\s+", " ", key or '').strip() for key in keys]
         for row in rows:
             record = make_record(keys, row)
-            if break_on_blank == True and set(record.values()) == {None}:
+            if set(record.values()) != {None}:
+                wbdata[title].append(record)
+            elif break_on_blank == True:
                 break
-            wbdata[title].append(record)
     return wbdata
 
 
